@@ -16,77 +16,70 @@ export const colorCollection: ArtworkCollection = {
   description: rostosFamiliaresDescription,
   theme: "color",
 
-  /*
-   * Obra isolada usada na tela inicial.
-   * Não faz parte da série Rostos Familiares.
-   */
   featuredArtwork: {
     id: "color-featured",
     slug: "autorretrato-bruno-castelo",
     title: "Autorretrato",
     year: 2026,
-    technique: "Giz pastel oleoso sobre papel",
+    technique: rostosTechnique,
     description: "Bruno Castelo · 29,7 × 42 cm",
     coverImage: "/artworks/featured/autorretrato.jpg",
     theme: "color",
     featured: true
   },
 
-  /*
-   * Série Rostos Familiares.
-   */
   artworks: [
-  {
-    id: "color-01",
-    slug: "leticia-guedes",
-    title: "Letícia Guedes",
-    year: 2026,
-    technique: "Giz pastel oleoso sobre papel",
-    description: "14,8 × 21 cm",
-    coverImage: "/artworks/featured/retrato-01.jpg",
-    theme: "color"
-  },
-  {
-    id: "color-02",
-    slug: "giovana",
-    title: "Giovana",
-    year: 2026,
-    technique: "Giz pastel oleoso sobre papel",
-    description: "14,8 × 21 cm",
-    coverImage: "/artworks/featured/retrato-02.jpg",
-    theme: "color"
-  },
-  {
-    id: "color-03",
-    slug: "brenda",
-    title: "Brenda",
-    year: 2026,
-    technique: "Giz pastel oleoso sobre papel",
-    description: "14,8 × 21 cm",
-    coverImage: "/artworks/featured/retrato-04.jpg",
-    theme: "color"
-  },
-  {
-    id: "color-04",
-    slug: "durval",
-    title: "Durval",
-    year: 2026,
-    technique: "Giz pastel oleoso sobre papel",
-    description: "14,8 × 21 cm",
-    coverImage: "/artworks/featured/retrato-05.jpg",
-    theme: "color"
-  },
-  {
-    id: "color-05",
-    slug: "geovana",
-    title: "Geovana",
-    year: 2026,
-    technique: "Giz pastel oleoso sobre papel",
-    description: "14,8 × 21 cm",
-    coverImage: "/artworks/featured/retrato-03.jpg",
-    theme: "color"
-  }
-]
+    {
+      id: "color-01",
+      slug: "leticia-guedes",
+      title: "Letícia Guedes",
+      year: 2026,
+      technique: rostosTechnique,
+      description: rostosDimensions,
+      coverImage: "/artworks/featured/retrato-01.jpg",
+      theme: "color"
+    },
+    {
+      id: "color-02",
+      slug: "giovana",
+      title: "Giovana",
+      year: 2026,
+      technique: rostosTechnique,
+      description: rostosDimensions,
+      coverImage: "/artworks/featured/retrato-02.jpg",
+      theme: "color"
+    },
+    {
+      id: "color-03",
+      slug: "brenda",
+      title: "Brenda",
+      year: 2026,
+      technique: rostosTechnique,
+      description: rostosDimensions,
+      coverImage: "/artworks/featured/retrato-04.jpg",
+      theme: "color"
+    },
+    {
+      id: "color-04",
+      slug: "durval",
+      title: "Durval",
+      year: 2026,
+      technique: rostosTechnique,
+      description: rostosDimensions,
+      coverImage: "/artworks/featured/retrato-05.jpg",
+      theme: "color"
+    },
+    {
+      id: "color-05",
+      slug: "geovana",
+      title: "Geovana",
+      year: 2026,
+      technique: rostosTechnique,
+      description: rostosDimensions,
+      coverImage: "/artworks/featured/retrato-03.jpg",
+      theme: "color"
+    }
+  ]
 };
 
 export const monochromeCollection: ArtworkCollection = {
@@ -157,6 +150,46 @@ export const monochromeCollection: ArtworkCollection = {
       technique: "A definir",
       description: "A definir",
       coverImage: "/artworks/hq/hq-05.png",
+      theme: "monochrome"
+    },
+    {
+      id: "mono-06",
+      slug: "hq-06",
+      title: "A definir",
+      year: 2026,
+      technique: "A definir",
+      description: "A definir",
+      coverImage: "/artworks/hq/hq-06.png",
+      theme: "monochrome"
+    },
+    {
+      id: "mono-07",
+      slug: "hq-07",
+      title: "A definir",
+      year: 2026,
+      technique: "A definir",
+      description: "A definir",
+      coverImage: "/artworks/hq/hq-07.png",
+      theme: "monochrome"
+    },
+    {
+      id: "mono-08",
+      slug: "hq-08",
+      title: "A definir",
+      year: 2026,
+      technique: "A definir",
+      description: "A definir",
+      coverImage: "/artworks/hq/hq-08.png",
+      theme: "monochrome"
+    },
+    {
+      id: "mono-09",
+      slug: "hq-09",
+      title: "A definir",
+      year: 2026,
+      technique: "A definir",
+      description: "A definir",
+      coverImage: "/artworks/hq/hq-09.png",
       theme: "monochrome"
     }
   ]

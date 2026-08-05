@@ -14,12 +14,12 @@ export default function ContatoPage() {
         </p>
 
         <div className="contact-list">
-          <a href={`mailto:${artist.email}`}>{artist.email}</a>
-          <a href={artist.instagram} target="_blank" rel="noreferrer">
+          <a
+            href={artist.instagram}
+            target="_blank"
+            rel="noreferrer"
+          >
             Instagram
-          </a>
-          <a href={artist.behance} target="_blank" rel="noreferrer">
-            Behance
           </a>
         </div>
       </main>

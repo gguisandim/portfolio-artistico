@@ -1,10 +1,6 @@
 export const artist = {
-  name: "Nome do Artista",
-  role: "Ilustração e artes visuais",
-  location: "Belém, Pará",
-  bio:
-    "Artista visual.",
-  email: "contato@exemplo.com",
-  instagram: "https://www.instagram.com/",
-  behance: "https://www.behance.net/"
+  name: "Bruno Castelo",
+  role: "Artista visual",
+  bio: "A definir",
+  instagram: "https://www.instagram.com/gabcastxl0/"
 };

@@ -1708,234 +1708,170 @@ img {
 }
 
 /* =========================================================
-   HQ — TABLET E MOBILE
-   Desktop mantém a mesa arrastável.
-   Telas menores usam carrossel horizontal.
+   SOBRE O ARTISTA — ENCERRAMENTO CLEAN
    ========================================================= */
 
-@media (max-width: 900px) {
-  .hq-table {
-    min-height: auto;
-    overflow: hidden;
-    padding:
-      6rem
-      1.25rem
-      5rem;
+.artist-about {
+  position: relative;
+  padding: clamp(3.5rem, 5vw, 5rem) var(--page-padding);
+  background: #f3f0e9;
+  color: #151515;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.artist-about__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 7rem);
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.artist-about__copy {
+  max-width: 650px;
+}
+
+.artist-about__eyebrow {
+  margin: 0 0 0.8rem;
+  color: #8a6b00;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.artist-about__copy h2 {
+  margin: 0;
+  font-family: var(--font-display), Arial, sans-serif;
+  font-size: clamp(2.8rem, 5vw, 5.8rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.artist-about__role {
+  width: fit-content;
+  margin: 1rem 0 0;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid #d2a900;
+  color: rgba(21, 21, 21, 0.68);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.artist-about__bio {
+  max-width: 520px;
+  margin: 1.35rem 0 0;
+  color: rgba(21, 21, 21, 0.62);
+  font-size: clamp(0.88rem, 1vw, 1rem);
+  line-height: 1.7;
+}
+
+.artist-about__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1.6rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #151515;
+  color: #151515;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: gap 200ms ease, opacity 200ms ease;
+}
+
+.artist-about__instagram:hover {
+  gap: 1rem;
+  opacity: 0.62;
+}
+
+.artist-about__visuals {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.artist-about__photo {
+  position: relative;
+  margin: 0;
+  padding: 0.45rem;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+.artist-about__photo--portrait {
+  width: clamp(150px, 16vw, 230px);
+  transform: rotate(-1deg);
+}
+
+.artist-about__photo--artwork {
+  width: clamp(130px, 14vw, 205px);
+  transform: rotate(1.2deg) translateY(0.8rem);
+}
+
+.artist-about__image {
+  position: relative;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.artist-about__photo--portrait .artist-about__image {
+  aspect-ratio: 3 / 4;
+}
+
+.artist-about__photo--artwork .artist-about__image {
+  aspect-ratio: 14.8 / 21;
+}
+
+.artist-about__image img {
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 800px) {
+  .artist-about {
+    padding: 3.5rem 1rem;
   }
 
-  .hq-table__content {
-    display: block;
-    max-width: none;
+  .artist-about__content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
-  .hq-table__intro {
-    position: relative;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 3rem;
+  .artist-about__copy h2 {
+    font-size: clamp(3rem, 14vw, 5rem);
   }
 
-  .hq-table__intro h2 {
-    font-size: clamp(4rem, 16vw, 7rem);
-    line-height: 0.82;
+  .artist-about__visuals {
+    justify-content: flex-start;
   }
 
-  .hq-table__description {
-    max-width: 320px;
-    margin-top: 1.4rem;
+  .artist-about__photo--portrait {
+    width: min(42vw, 210px);
   }
 
-  /*
-   * No celular não existe arraste livre.
-   * O usuário desliza horizontalmente.
-   */
-  .hq-table__controls {
-    margin-top: 2rem;
-  }
-
-  .hq-table__controls span {
-    display: none;
-  }
-
-  .hq-table__controls button {
-    display: none;
-  }
-
-  .hq-table__drag-hint {
-    display: none;
-  }
-
-  .hq-table__paperclip,
-  .hq-table__pencil-mark {
-    display: none;
-  }
-
-  /* Capa separada e centralizada */
-
-  .hq-paper--cover {
-    position: relative;
-    width: min(88vw, 440px);
-    max-width: none;
-    margin: 0 auto 5rem;
-    transform: rotate(-1deg);
-  }
-
-  .hq-paper__image--cover {
-    min-height: auto;
-    aspect-ratio: 0.72;
-  }
-
-  /* Carrossel das nove páginas */
-
-  .hq-table__pages {
-    position: relative;
-    display: flex;
-    grid-template-columns: none;
-    gap: 1.25rem;
-
-    width: calc(100% + 1.25rem);
-    min-height: 0;
-    margin: 0;
-    padding:
-      1rem
-      1.25rem
-      2rem
-      0;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: 0;
-    overscroll-behavior-inline: contain;
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: thin;
-    scrollbar-color:
-      rgba(212, 168, 70, 0.9)
-      rgba(255, 255, 255, 0.08);
-  }
-
-  .hq-table__pages::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .hq-table__pages::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.07);
-  }
-
-  .hq-table__pages::-webkit-scrollbar-thumb {
-    background: #d4a846;
-    border-radius: 999px;
-  }
-
-  /*
-   * Remove completamente os posicionamentos absolutos
-   * usados na mesa do desktop.
-   */
-  .hq-paper--page-one,
-  .hq-paper--page-two,
-  .hq-paper--page-three,
-  .hq-paper--page-four,
-  .hq-paper--page-five,
-  .hq-paper--page-six,
-  .hq-paper--page-seven,
-  .hq-paper--page-eight,
-  .hq-paper--page-nine {
-    position: relative;
-    inset: auto;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto;
-
-    flex: 0 0 min(76vw, 390px);
-    width: min(76vw, 390px);
-    max-width: 390px;
-    margin: 0;
-
-    transform: none !important;
-
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-  }
-
-  .hq-paper__image,
-  .hq-paper--page-four .hq-paper__image {
-    min-height: auto;
-    aspect-ratio: 4 / 3;
-  }
-
-  .hq-paper {
-    cursor: default;
-    touch-action: pan-x;
-  }
-
-  .hq-paper__number {
-    font-size: 0.8rem;
-  }
-
-  /* Encerramento */
-
-  .hq-table__ending {
-    position: relative;
-    width: min(88vw, 380px);
-    margin: 5rem auto 0;
-    transform: rotate(1deg);
+  .artist-about__photo--artwork {
+    width: min(37vw, 185px);
   }
 }
 
-@media (max-width: 600px) {
-  .hq-table {
-    padding:
-      5rem
-      1rem
-      4rem;
+@media (max-width: 480px) {
+  .artist-about__visuals {
+    gap: 0.65rem;
   }
 
-  .hq-table__intro {
-    margin-bottom: 2.5rem;
+  .artist-about__photo--portrait {
+    width: 46vw;
   }
 
-  .hq-table__intro h2 {
-    font-size: clamp(4.2rem, 20vw, 6.4rem);
-  }
-
-  .hq-paper--cover {
-    width: 90vw;
-    margin-bottom: 4rem;
-  }
-
-  .hq-table__pages {
-    width: calc(100% + 1rem);
-    gap: 1rem;
-    padding-right: 1rem;
-  }
-
-  .hq-paper--page-one,
-  .hq-paper--page-two,
-  .hq-paper--page-three,
-  .hq-paper--page-four,
-  .hq-paper--page-five,
-  .hq-paper--page-six,
-  .hq-paper--page-seven,
-  .hq-paper--page-eight,
-  .hq-paper--page-nine {
-    flex-basis: 84vw;
-    width: 84vw;
-    max-width: 360px;
-  }
-
-  .hq-paper {
-    padding: 0.5rem;
-  }
-
-  .hq-paper__image,
-  .hq-paper--page-four .hq-paper__image {
-    aspect-ratio: 4 / 3;
-  }
-
-  .hq-table__ending {
-    width: 90vw;
+  .artist-about__photo--artwork {
+    width: 40vw;
   }
 }

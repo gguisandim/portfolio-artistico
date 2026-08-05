@@ -3,6 +3,7 @@ import ColorHero from "@/components/hero/ColorHero";
 import Header from "@/components/layout/Header";
 import AboutPreview from "@/components/about/AboutPreview";
 import HQSection from "@/components/hq/HQsection";
+import DigitalArtSection from "@/components/digital/DigitalArtSection";
 import { colorCollection } from "@/data/collections";
 
 export default function HomePage() {
@@ -14,6 +15,7 @@ export default function HomePage() {
         <ColorHero artwork={colorCollection.featuredArtwork} />
         <ArtworkCollection collection={colorCollection} />
         <HQSection />
+        <DigitalArtSection />
         <AboutPreview />
       </main>
     </>

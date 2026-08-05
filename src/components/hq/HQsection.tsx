@@ -236,7 +236,7 @@ export default function HQSection() {
             aria-hidden="true"
           />
 
-          <p>Gostou da leitura?</p>
+          <p>Gostou ?</p>
 
           <a
             href="/artworks/hq/ainda-sou-eu.pdf"

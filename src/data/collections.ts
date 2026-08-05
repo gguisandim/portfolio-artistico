@@ -1,90 +1,106 @@
 import type { ArtworkCollection } from "@/types/collection";
 
+const rostosFamiliaresDescription =
+  "A série de obras “Rostos Familiares” surge a partir da experimentação dos processos de pintura da disciplina “Laboratório de Pintura”, ministrada pela docente Waléria Américo. O objetivo central era experimentar, a partir das técnicas de pintura, conceitos que poderiam ser aprofundados durante o percurso da disciplina e, posteriormente, transformados em uma série de obras para sua avaliação, servindo também como possível eixo para a poética futura do artista.";
+
+const rostosTechnique =
+  "Giz pastel oleoso sobre papel";
+
+const rostosDimensions =
+  "14,8 × 21 cm";
+
 export const colorCollection: ArtworkCollection = {
   id: "coloridas",
-  title: "A definir",
-  subtitle: "A definir",
-  description: "A definir",
+  title: "Rostos Familiares",
+  subtitle: "Memorial Descritivo",
+  description: rostosFamiliaresDescription,
   theme: "color",
 
+  /*
+   * Obra isolada usada na tela inicial.
+   * Não faz parte da série Rostos Familiares.
+   */
   featuredArtwork: {
     id: "color-featured",
-    slug: "autorretrato",
-    title: "A definir",
-    year: 2024,
-    technique: "A definir",
-    description: "A definir",
-    coverImage: "/artworks/featured/autorretrato.png",
+    slug: "autorretrato-bruno-castelo",
+    title: "Autorretrato",
+    year: 2026,
+    technique: "Giz pastel oleoso sobre papel",
+    description: "Bruno Castelo · 29,7 × 42 cm",
+    coverImage: "/artworks/featured/autorretrato.jpg",
     theme: "color",
     featured: true
   },
 
+  /*
+   * Série Rostos Familiares.
+   */
   artworks: [
-    {
-      id: "color-01",
-      slug: "azul-profundo",
-      title: "A definir",
-      year: 2024,
-      technique: "A definir",
-      description: "A definir",
-      coverImage: "/artworks/featured/azul-profundo.png",
-      theme: "color"
-    },
-    {
-      id: "color-02",
-      slug: "olhar-direto",
-      title: "A definir",
-      year: 2024,
-      technique: "A definir",
-      description: "A definir",
-      coverImage: "/artworks/featured/olhar-direto.png",
-      theme: "color"
-    },
-    {
-      id: "color-03",
-      slug: "perfil",
-      title: "A definir",
-      year: 2024,
-      technique: "A definir",
-      description: "A definir",
-      coverImage: "/artworks/featured/perfil.png",
-      theme: "color"
-    },
-    {
-      id: "color-04",
-      slug: "entre-cores",
-      title: "A definir",
-      year: 2024,
-      technique: "A definir",
-      description: "A definir",
-      coverImage: "/artworks/featured/entre-cores.png",
-      theme: "color"
-    },
-    {
-      id: "color-05",
-      slug: "presenca",
-      title: "A definir",
-      year: 2024,
-      technique: "A definir",
-      description: "A definir",
-      coverImage: "/artworks/featured/presenca.png",
-      theme: "color"
-    }
-  ]
+  {
+    id: "color-01",
+    slug: "leticia-guedes",
+    title: "Letícia Guedes",
+    year: 2026,
+    technique: "Giz pastel oleoso sobre papel",
+    description: "14,8 × 21 cm",
+    coverImage: "/artworks/featured/retrato-01.jpg",
+    theme: "color"
+  },
+  {
+    id: "color-02",
+    slug: "giovana",
+    title: "Giovana",
+    year: 2026,
+    technique: "Giz pastel oleoso sobre papel",
+    description: "14,8 × 21 cm",
+    coverImage: "/artworks/featured/retrato-02.jpg",
+    theme: "color"
+  },
+  {
+    id: "color-03",
+    slug: "brenda",
+    title: "Brenda",
+    year: 2026,
+    technique: "Giz pastel oleoso sobre papel",
+    description: "14,8 × 21 cm",
+    coverImage: "/artworks/featured/retrato-04.jpg",
+    theme: "color"
+  },
+  {
+    id: "color-04",
+    slug: "durval",
+    title: "Durval",
+    year: 2026,
+    technique: "Giz pastel oleoso sobre papel",
+    description: "14,8 × 21 cm",
+    coverImage: "/artworks/featured/retrato-05.jpg",
+    theme: "color"
+  },
+  {
+    id: "color-05",
+    slug: "geovana",
+    title: "Geovana",
+    year: 2026,
+    technique: "Giz pastel oleoso sobre papel",
+    description: "14,8 × 21 cm",
+    coverImage: "/artworks/featured/retrato-03.jpg",
+    theme: "color"
+  }
+]
 };
 
 export const monochromeCollection: ArtworkCollection = {
   id: "preto-e-branco",
-  title: "A definir",
-  subtitle: "A definir",
+  title: "Ainda Sou Eu",
+  subtitle: "História em quadrinhos",
   description: "A definir",
   theme: "monochrome",
 
   featuredArtwork: {
     id: "mono-featured",
     slug: "ainda-sou-eu",
-    title: "A definir",
-    year: 2024,
+    title: "Ainda Sou Eu",
+    year: 2026,
     technique: "A definir",
     description: "A definir",
     coverImage: "/artworks/hq/hq-destaque.png",
@@ -97,7 +113,7 @@ export const monochromeCollection: ArtworkCollection = {
       id: "mono-01",
       slug: "hq-01",
       title: "A definir",
-      year: 2024,
+      year: 2026,
       technique: "A definir",
       description: "A definir",
       coverImage: "/artworks/hq/hq-01.png",
@@ -107,7 +123,7 @@ export const monochromeCollection: ArtworkCollection = {
       id: "mono-02",
       slug: "hq-02",
       title: "A definir",
-      year: 2024,
+      year: 2026,
       technique: "A definir",
       description: "A definir",
       coverImage: "/artworks/hq/hq-02.png",
@@ -117,7 +133,7 @@ export const monochromeCollection: ArtworkCollection = {
       id: "mono-03",
       slug: "hq-03",
       title: "A definir",
-      year: 2024,
+      year: 2026,
       technique: "A definir",
       description: "A definir",
       coverImage: "/artworks/hq/hq-03.png",
@@ -127,7 +143,7 @@ export const monochromeCollection: ArtworkCollection = {
       id: "mono-04",
       slug: "hq-04",
       title: "A definir",
-      year: 2024,
+      year: 2026,
       technique: "A definir",
       description: "A definir",
       coverImage: "/artworks/hq/hq-04.png",
@@ -137,7 +153,7 @@ export const monochromeCollection: ArtworkCollection = {
       id: "mono-05",
       slug: "hq-05",
       title: "A definir",
-      year: 2024,
+      year: 2026,
       technique: "A definir",
       description: "A definir",
       coverImage: "/artworks/hq/hq-05.png",

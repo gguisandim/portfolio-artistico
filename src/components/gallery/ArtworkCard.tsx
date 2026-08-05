@@ -15,6 +15,8 @@ export default function ArtworkCard({
   index,
   onSelect
 }: ArtworkCardProps) {
+  const order = String(index + 1).padStart(2, "0");
+
   return (
     <motion.button
       type="button"
@@ -24,6 +26,7 @@ export default function ArtworkCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-8%" }}
       transition={{ duration: 0.65, delay: index * 0.08 }}
+      whileHover={{ y: -8 }}
       aria-label={`Abrir detalhes da obra ${artwork.title}`}
     >
       <motion.div
@@ -36,10 +39,16 @@ export default function ArtworkCard({
           fill
           sizes="(max-width: 700px) 78vw, 20vw"
         />
+
+        <span className="featured-card__order">{order}</span>
+        <span className="featured-card__view">Ver obra ↗</span>
       </motion.div>
 
       <div className="featured-card__caption">
-        <span>{artwork.title}</span>
+        <div>
+          <strong>{artwork.title}</strong>
+          <small>{artwork.technique}</small>
+        </div>
         <span>{artwork.year}</span>
       </div>
     </motion.button>

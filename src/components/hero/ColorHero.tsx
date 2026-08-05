@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useMemo, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { Artwork } from "@/types/artwork";
@@ -16,6 +16,19 @@ export default function ColorHero({ artwork }: ColorHeroProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 22 }, (_, index) => ({
+        id: index,
+        left: `${12 + ((index * 37) % 76)}%`,
+        top: `${10 + ((index * 29) % 74)}%`,
+        size: 2 + (index % 4),
+        delay: (index % 7) * 0.35,
+        duration: 4.5 + (index % 6) * 0.7
+      })),
+    []
+  );
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {
@@ -42,21 +55,32 @@ export default function ColorHero({ artwork }: ColorHeroProps) {
           opacity: 1,
           y: 0,
           duration: 0.8,
-          stagger: 0.12,
+          stagger: 0.1,
           delay: 0.35,
           ease: "power2.out"
         }
       );
 
       gsap.to(imageRef.current, {
-        yPercent: 8,
-        scale: 1.035,
+        yPercent: 7,
+        scale: 1.025,
         ease: "none",
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
           end: "bottom top",
           scrub: 1
+        }
+      });
+
+      gsap.to(".featured-hero__brush-line", {
+        xPercent: 3,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1.2
         }
       });
     }, sectionRef);
@@ -66,13 +90,38 @@ export default function ColorHero({ artwork }: ColorHeroProps) {
 
   return (
     <section ref={sectionRef} className="featured-hero">
+      <div className="featured-hero__ambient" aria-hidden="true" />
+      <div className="featured-hero__grain" aria-hidden="true" />
+      <div className="featured-hero__brush-line" aria-hidden="true" />
+      <div className="featured-hero__scribble" aria-hidden="true" />
+
+      <div className="featured-hero__particles" aria-hidden="true">
+        {particles.map((particle) => (
+          <span
+            key={particle.id}
+            className="featured-hero__particle"
+            style={{
+              left: particle.left,
+              top: particle.top,
+              width: particle.size,
+              height: particle.size,
+              animationDelay: `${particle.delay}s`,
+              animationDuration: `${particle.duration}s`
+            }}
+          />
+        ))}
+      </div>
+
       <div ref={contentRef} className="featured-hero__copy">
-        <p className="featured-hero__eyebrow">Obra em destaque</p>
+        <div className="featured-hero__topline">
+          <p className="featured-hero__eyebrow">Obra em destaque</p>
+          <span>01 / 06</span>
+        </div>
+
         <h1>{artwork.title}</h1>
-        <p className="featured-hero__description">{artwork.description}</p>
 
         <button className="featured-hero__details" type="button">
-          Ver detalhes
+          Ver detalhes <span aria-hidden="true">↗</span>
         </button>
 
         <div className="featured-hero__scroll">
@@ -87,13 +136,20 @@ export default function ColorHero({ artwork }: ColorHeroProps) {
           alt={artwork.title}
           fill
           priority
-          sizes="(max-width: 900px) 100vw, 78vw"
+          sizes="(max-width: 900px) 100vw, 86vw"
         />
       </div>
 
-      <p className="featured-hero__aside">
-        Cores intensas, memórias vivas e formas que se transformam.
-      </p>
+      <aside className="featured-hero__quote">
+        <span aria-hidden="true">“</span>
+        <p>XXXX</p>
+        <strong>— A definir</strong>
+      </aside>
+
+      <div className="featured-hero__art-credit">
+        <span>Autoretrato</span>
+        <span>{artwork.year}</span>
+      </div>
     </section>
   );
 }

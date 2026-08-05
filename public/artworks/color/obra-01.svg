@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <rect width="900" height="1200" fill="#f3d8a8"/>
+  <path d="M-40 310 C180 170 320 530 560 300 S930 130 980 470"
+        fill="none" stroke="#db4d55" stroke-width="70" stroke-linecap="round"/>
+  <circle cx="650" cy="260" r="155" fill="#4c83c3" opacity="0.92"/>
+  <path d="M100 970 C250 650 470 1020 820 650" fill="none"
+        stroke="#1a1820" stroke-width="18" stroke-linecap="round"/>
+  <path d="M180 800 L380 530 L560 840 Z" fill="none"
+        stroke="#1a1820" stroke-width="13"/>
+  <text x="60" y="1120" fill="#1a1820" font-family="Arial" font-size="42">Jardim Interno</text>
+</svg>

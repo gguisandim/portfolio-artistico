@@ -75,7 +75,7 @@ export const galleryProjects: GalleryProject[] = [
     number: "02",
     title: "Ainda Sou Eu",
     subtitle: "História em quadrinhos · 2026",
-    description: "A HQ completa reunida em sequência, da capa à última página.",
+    description: "Detalhes da HQ, capa e traços",
     tone: "hq",
     images: [
       {

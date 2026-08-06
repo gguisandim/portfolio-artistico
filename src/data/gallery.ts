@@ -104,7 +104,7 @@ export const galleryProjects: GalleryProject[] = [
     number: "03",
     title: "Arte Digital",
     subtitle: "Ilustrações autorais e fanarts",
-    description: "Personagens, cor e movimento reunidos nos experimentos digitais do portfólio.",
+    description: "Personagens, cor e fanarts reunidos nos experimentos digitais do portfólio.",
     tone: "digital",
     images: [
       {
@@ -119,7 +119,7 @@ export const galleryProjects: GalleryProject[] = [
         src: "/artworks/digital/estudo-de-personagem.png",
         alt: "Personagem de cabelos escuros, óculos, blazer e calça azul",
         title: "Rebecca Sugar",
-        detail: "Movimento e presença",
+        detail: "Experimento 2.5D",
         fit: "contain"
       },
       {
@@ -127,7 +127,7 @@ export const galleryProjects: GalleryProject[] = [
         src: "/artworks/digital/entre-rubi-e-azul.png",
         alt: "Duas personagens sentadas, uma em tons rubi e outra em tons azuis",
         title: "Rubi e Safira",
-        detail: "Cor e afeto",
+        detail: "Experimento 2.5D",
         fit: "contain"
       }
     ]

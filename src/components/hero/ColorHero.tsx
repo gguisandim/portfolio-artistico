@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useLayoutEffect, useMemo, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -120,9 +121,9 @@ export default function ColorHero({ artwork }: ColorHeroProps) {
 
         <h1>{artwork.title}</h1>
 
-        <button className="featured-hero__details" type="button">
+        <Link className="featured-hero__details" href="/galeria#autorretrato-bruno-castelo">
           Ver detalhes <span aria-hidden="true">↗</span>
-        </button>
+        </Link>
 
         <div className="featured-hero__scroll">
           <span />

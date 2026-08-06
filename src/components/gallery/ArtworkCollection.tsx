@@ -29,7 +29,7 @@ export default function ArtworkCollection({
             {collection.description}
           </p>
 
-          <a className="featured-collection__link" href="#obras-coloridas">
+          <a className="featured-collection__link" href="/galeria#rostos-familiares">
             Ver coleção completa <span aria-hidden="true">→</span>
           </a>
         </header>

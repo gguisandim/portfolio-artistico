@@ -162,7 +162,9 @@ export default function HQSection() {
           </h2>
 
           <p className="hq-table__description">
-            A definir
+            A HQ autobiográfica ‘Ainda Sou Eu’ originou-se a partir do percurso da disciplina ‘Laboratório de Narrativas Gráficas: HQ e Animação’, ministrada pela docente Aylana Canto, no ano de 2026.
+Perpassando por temas como infância, melancolia e sexualidade, a HQ ‘Ainda Sou Eu’ busca, a partir da arte sequencial, compartilhar pensamentos íntimos do autor acerca do seu crescimento e do seu próprio indivíduo.
+‘Ainda Sou Eu’ surge em uma perspectiva mais poética, se distanciando das histórias clássicas em quadrinho, em uma tentativa de auto reflexão do artista.
           </p>
 
           <span

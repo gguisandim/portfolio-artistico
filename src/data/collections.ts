@@ -31,8 +31,8 @@ export const colorCollection: ArtworkCollection = {
   artworks: [
     {
       id: "color-01",
-      slug: "leticia-guedes",
-      title: "Letícia Guedes",
+      slug: "leticia",
+      title: "Letícia",
       year: 2026,
       technique: rostosTechnique,
       description: rostosDimensions,

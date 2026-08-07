@@ -34,10 +34,10 @@ export const galleryProjects: GalleryProject[] = [
         detail: "Bruno Castelo · 29,7 × 42 cm"
       },
       {
-        id: "leticia-guedes",
+        id: "leticia",
         src: "/artworks/featured/retrato-01.jpg",
-        alt: "Retrato de Letícia Guedes",
-        title: "Letícia Guedes",
+        alt: "Retrato de Letícia",
+        title: "Letícia",
         detail: "14,8 × 21 cm"
       },
       {

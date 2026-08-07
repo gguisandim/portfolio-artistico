@@ -4,8 +4,8 @@ import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Galeria — Bruno Gabriel",
-  description: "Todas as obras do portfólio de Bruno Gabriel, organizadas por projeto."
+  title: "Galeria — Bruno Castelo",
+  description: "Todas as obras do portfólio de Bruno Castelo, organizadas por projeto."
 };
 
 export default function GaleriaPage() {

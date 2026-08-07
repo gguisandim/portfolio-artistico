@@ -1,7 +1,7 @@
 import type { ArtworkCollection } from "@/types/collection";
 
 const rostosFamiliaresDescription =
-  "A série de obras “Rostos Familiares” surge a partir da experimentação dos processos de pintura da disciplina “Laboratório de Pintura”, ministrada pela docente Waléria Américo. O objetivo central era experimentar, a partir das técnicas de pintura, conceitos que poderiam ser aprofundados durante o percurso da disciplina e, posteriormente, transformados em uma série de obras para sua avaliação, servindo também como possível eixo para a poética futura do artista.";
+  "A Série “Rostos Familiares” surge a partir da experimentação dos processos pictóricos durante a disciplina ‘Laboratório de Pintura’, ministrada pela docente Waléria Américo, no ano de 2026. A Série é composta por 5 retratos produzidos com giz pastel oleoso sobre papel, em formato A5, que buscam representar, assim como no nome da série, rostos familiares para o autor. Utilizando cores saturadas ‘Rostos Familiares’ busca trazer destaque à 5 amigos próximos do autor, ressaltando suas individualidades e características, através da visão artística e afetiva do mesmo.";
 
 const rostosTechnique =
   "Giz pastel oleoso sobre papel";

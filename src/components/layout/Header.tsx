@@ -44,7 +44,7 @@ export default function Header() {
     <>
       <header className="site-header">
         <Link className="site-header__brand" href="/" aria-label="Bruno Gabriel — página inicial">
-          Bruno Gabriel
+          Bruno Castelo
         </Link>
 
         <nav className="site-header__nav" aria-label="Navegação principal">

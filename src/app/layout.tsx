@@ -27,9 +27,9 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Bruno Gabriel — Portfólio",
+  title: "Bruno Castelo — Portfólio",
   description:
-    "Portfólio artístico de Bruno Gabriel, com pinturas e histórias em quadrinhos."
+    "Portfólio artístico de Bruno Castelo, com pinturas e histórias em quadrinhos."
 };
 
 export default function RootLayout({

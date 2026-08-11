@@ -1050,6 +1050,7 @@ img {
   .hq-paper--cover { width: min(88vw, 590px); height: min(112vw, 740px); margin: 0 auto; }
   .hq-table__pages {
     display: flex;
+    align-items: flex-start;
     gap: 1.1rem;
     min-height: 0;
     width: calc(100% + 1rem);
@@ -2435,6 +2436,7 @@ img {
     flex: 0 0 min(78vw, 560px);
     width: min(78vw, 560px);
     height: auto;
+    align-self: flex-start;
   }
 
   .hq-paper__image {

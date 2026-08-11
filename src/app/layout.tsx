@@ -40,6 +40,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
+        id="top"
         className={`${inter.variable} ${bebas.variable} ${caveat.variable}`}
       >
         {children}

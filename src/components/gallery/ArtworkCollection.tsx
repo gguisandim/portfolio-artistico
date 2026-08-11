@@ -49,7 +49,7 @@ export default function ArtworkCollection({
       <div className="featured-collection__transition" aria-hidden="true">
         <span>Rostos Familiares</span>
         <i />
-        <span>Ainda sou Eu</span>
+        <span>Autorretratos</span>
       </div>
 
       <ArtworkModal

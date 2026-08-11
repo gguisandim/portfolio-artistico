@@ -6,14 +6,33 @@ import { artist } from "@/data/artist";
 
 export default function AboutPreview() {
   return (
-    <section id="sobre-artista" className="artist-about">
+    <section id="sobre-artista" className="artist-about artist-about--home">
       <div className="artist-about__content">
+        <motion.figure
+          className="artist-about__portrait-card"
+          initial={{ opacity: 0, y: 28, rotate: -1.5 }}
+          whileInView={{ opacity: 1, y: 0, rotate: -0.7 }}
+          viewport={{ once: true, margin: "-10%" }}
+          transition={{ duration: 0.72, ease: "easeOut" }}
+        >
+          <div className="artist-about__portrait-image">
+            <Image
+              src="/artist/bruno-castelo.png"
+              alt="Bruno Castelo"
+              fill
+              sizes="(max-width: 800px) 78vw, 430px"
+              priority={false}
+            />
+          </div>
+          <figcaption>Bruno Castelo · Belém, PA</figcaption>
+        </motion.figure>
+
         <motion.div
-          className="artist-about__copy"
+          className="artist-about__copy artist-about__copy--paper"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-10%" }}
-          transition={{ duration: 0.65, ease: "easeOut" }}
+          transition={{ duration: 0.65, delay: 0.08, ease: "easeOut" }}
         >
           <p className="artist-about__eyebrow">Sobre o artista</p>
           <h2>{artist.name}</h2>
@@ -29,26 +48,6 @@ export default function AboutPreview() {
             Instagram <span aria-hidden="true">↗</span>
           </a>
         </motion.div>
-
-        <div className="artist-about__visuals">
-          <motion.figure
-            className="artist-about__photo artist-about__photo--artwork artist-about__photo--single"
-            initial={{ opacity: 0, y: 34 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.75, delay: 0.08, ease: "easeOut" }}
-          >
-            <div className="artist-about__image">
-              <Image
-                src="/artist/autorretrato-azul.jpeg"
-                alt="Autorretrato de Bruno Castelo em tons azuis sobre fundo amarelo"
-                fill
-                sizes="(max-width: 700px) 58vw, 280px"
-              />
-            </div>
-            <figcaption>Autorretrato II · 2026</figcaption>
-          </motion.figure>
-        </div>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useLayoutEffect, useMemo, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { Artwork } from "@/types/artwork";
@@ -17,27 +17,6 @@ export default function ColorHero({ artwork }: ColorHeroProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const heroArtworks = useMemo(
-    () => [
-      {
-        id: "autorretrato-amarelo",
-        src: artwork.coverImage,
-        alt: "Autorretrato de Bruno Castelo em tons amarelos, azuis e verdes",
-        label: "Autorretrato I",
-        className: "featured-hero__slide--yellow"
-      },
-      {
-        id: "autorretrato-azul",
-        src: "/artworks/featured/retrato-06.jpg",
-        alt: "Autorretrato de Bruno Castelo em tons azuis sobre fundo amarelo",
-        label: "Autorretrato II",
-        className: "featured-hero__slide--blue"
-      }
-    ],
-    [artwork.coverImage]
-  );
 
   const particles = useMemo(
     () =>
@@ -51,17 +30,6 @@ export default function ColorHero({ artwork }: ColorHeroProps) {
       })),
     []
   );
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mediaQuery.matches) return;
-
-    const interval = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % heroArtworks.length);
-    }, 5000);
-
-    return () => window.clearInterval(interval);
-  }, [heroArtworks.length]);
 
   useLayoutEffect(() => {
     const context = gsap.context(() => {
@@ -147,28 +115,15 @@ export default function ColorHero({ artwork }: ColorHeroProps) {
 
       <div ref={contentRef} className="featured-hero__copy">
         <div className="featured-hero__topline">
-          <p className="featured-hero__eyebrow">Autorretratos</p>
-          <span aria-live="polite">0{activeIndex + 1} / 02</span>
+          <p className="featured-hero__eyebrow">Obra em destaque</p>
+          <span>01 / 01</span>
         </div>
 
         <h1>{artwork.title}</h1>
 
-        <Link className="featured-hero__details" href="/galeria#autorretratos">
-          Ver na galeria <span aria-hidden="true">↗</span>
+        <Link className="featured-hero__details" href="#autorretratos">
+          Ver autorretratos <span aria-hidden="true">↘</span>
         </Link>
-
-        <div className="featured-hero__slider-nav" aria-label="Escolher autorretrato">
-          {heroArtworks.map((item, index) => (
-            <button
-              key={item.id}
-              type="button"
-              className={index === activeIndex ? "is-active" : undefined}
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Mostrar ${item.label}`}
-              aria-current={index === activeIndex ? "true" : undefined}
-            />
-          ))}
-        </div>
 
         <div className="featured-hero__scroll">
           <span />
@@ -176,22 +131,19 @@ export default function ColorHero({ artwork }: ColorHeroProps) {
         </div>
       </div>
 
-      <div ref={imageRef} className="featured-hero__art" aria-live="polite">
-        {heroArtworks.map((item, index) => (
-          <Image
-            key={item.id}
-            src={item.src}
-            alt={item.alt}
-            fill
-            priority={index === 0}
-            className={`featured-hero__slide ${item.className} ${index === activeIndex ? "is-active" : ""}`}
-            sizes="(max-width: 900px) 100vw, 86vw"
-          />
-        ))}
+      <div ref={imageRef} className="featured-hero__art">
+        <Image
+          src={artwork.coverImage}
+          alt="Autorretrato de Bruno Castelo em tons amarelos, azuis e verdes"
+          fill
+          priority
+          className="featured-hero__single-image"
+          sizes="(max-width: 900px) 100vw, 86vw"
+        />
       </div>
 
-      <div className="featured-hero__art-credit" aria-live="polite">
-        <span>{heroArtworks[activeIndex].label}</span>
+      <div className="featured-hero__art-credit">
+        <span>Autorretrato I</span>
         <span>{artwork.year}</span>
       </div>
     </section>

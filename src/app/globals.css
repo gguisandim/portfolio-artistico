@@ -605,7 +605,188 @@ img {
 }
 
 .site-footer {
-  display: none;
+  position: relative;
+  padding: clamp(3rem, 6vw, 5.5rem) var(--page-padding);
+  border-top: 1px solid rgba(245, 196, 0, 0.5);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(245, 196, 0, 0.08), transparent 28rem),
+    #070707;
+  color: var(--foreground);
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--page-padding);
+  width: clamp(5rem, 11vw, 9rem);
+  height: 4px;
+  background: var(--yellow);
+}
+
+.site-footer__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+  max-width: 1600px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.012);
+}
+
+.site-footer__contact,
+.site-footer__nav {
+  min-height: 320px;
+  padding: clamp(2rem, 4vw, 4rem);
+}
+
+.site-footer__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer__index,
+.site-footer__label {
+  display: block;
+  color: var(--yellow);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.site-footer__contact .site-footer__label {
+  margin-top: clamp(3.2rem, 7vw, 6rem);
+}
+
+.site-footer__nav .site-footer__label {
+  margin-bottom: 1.35rem;
+}
+
+.site-footer__instagram {
+  position: relative;
+  margin-top: 1.15rem;
+  padding: 0 0 0.6rem;
+  border-bottom: 1px solid var(--yellow);
+  font-size: clamp(1.4rem, 2.6vw, 2.5rem);
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.site-footer__instagram span {
+  color: var(--yellow);
+}
+
+.site-footer__instagram:hover {
+  color: var(--yellow);
+}
+
+.site-footer__location {
+  margin: 1.3rem 0 0;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.site-footer__nav a {
+  display: grid;
+  grid-template-columns: 2.1rem 1fr;
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.72rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  font-weight: 650;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  transition: color 180ms ease, padding-left 180ms ease;
+}
+
+.site-footer__nav a span {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.58rem;
+}
+
+.site-footer__nav a:hover {
+  padding-left: 0.35rem;
+  color: var(--yellow);
+}
+
+.site-footer__bottom {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem clamp(2rem, 4vw, 4rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.58rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.site-footer__bottom a {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 180ms ease;
+}
+
+.site-footer__bottom a:hover {
+  color: var(--yellow);
+}
+
+@media (max-width: 760px) {
+  .site-footer {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .site-footer__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__contact,
+  .site-footer__nav {
+    min-height: auto;
+    padding: 2.25rem;
+  }
+
+  .site-footer__contact .site-footer__label {
+    margin-top: 3.5rem;
+  }
+
+  .site-footer__nav {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 0;
+  }
+
+  .site-footer__bottom {
+    padding: 1.15rem 2.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer__contact,
+  .site-footer__nav {
+    padding: 1.7rem;
+  }
+
+  .site-footer__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1.15rem 1.7rem;
+  }
 }
 
 @media (max-width: 1000px) {
@@ -2317,54 +2498,6 @@ img {
    REFINOS — AUTORRETRATOS, HQ REVISADA E LEITURA
    ========================================================= */
 
-/* Hero: dois autorretratos alternando sem alterar os arquivos originais. */
-.featured-hero__slide {
-  z-index: 1;
-  opacity: 0;
-  object-fit: cover;
-  pointer-events: none;
-  transition: opacity 900ms ease;
-}
-
-.featured-hero__slide.is-active {
-  z-index: 2;
-  opacity: 1;
-}
-
-.featured-hero__slide--yellow {
-  object-position: 50% 31% !important;
-}
-
-.featured-hero__slide--blue {
-  object-position: 50% 31% !important;
-}
-
-.featured-hero__slider-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  margin-top: 1.35rem;
-}
-
-.featured-hero__slider-nav button {
-  width: 1.6rem;
-  height: 3px;
-  padding: 0;
-  border: 0;
-  background: rgba(255, 255, 255, 0.28);
-  cursor: pointer;
-  transition: width 220ms ease, background 220ms ease;
-}
-
-.featured-hero__slider-nav button.is-active {
-  width: 2.6rem;
-  background: var(--yellow);
-}
-
-.featured-hero__scroll {
-  margin-top: clamp(3rem, 6vw, 6rem);
-}
-
 /* Galeria: o arquivo passa a ter quatro núcleos e preserva o enquadramento dos autorretratos. */
 .gallery-index {
   grid-template-columns: repeat(4, 1fr);
@@ -2400,24 +2533,6 @@ img {
   hyphens: auto;
 }
 
-/* Sobre: sem fotografia pessoal; o autorretrato azul encerra a página. */
-.artist-about__photo--single {
-  width: clamp(190px, 18vw, 280px);
-  transform: rotate(1deg);
-}
-
-.artist-about__photo--single .artist-about__image {
-  aspect-ratio: 1535 / 2048;
-}
-
-.artist-about__photo figcaption {
-  padding: 0.55rem 0.25rem 0.15rem;
-  color: rgba(21, 21, 21, 0.62);
-  font-family: var(--font-hand), cursive;
-  font-size: 0.86rem;
-  line-height: 1.1;
-}
-
 @media (max-width: 900px) {
   .hq-paper--cover {
     width: min(88vw, 520px);
@@ -2445,11 +2560,6 @@ img {
   }
 }
 
-@media (max-width: 800px) {
-  .artist-about__photo--single {
-    width: min(58vw, 260px);
-  }
-}
 
 @media (max-width: 560px) {
   .hq-paper--cover {
@@ -2475,13 +2585,441 @@ img {
     min-height: 3.5rem;
   }
 
-  .featured-hero__slide--blue {
-    object-position: 50% 29% !important;
+}
+
+
+/* =========================================================
+   HOME 2026-08 — HERO ÚNICO, SOBRE E AUTORRETRATOS
+   ========================================================= */
+
+/* Hero: mantém apenas o autorretrato amarelo como obra de abertura. */
+.featured-hero__single-image {
+  z-index: 1;
+  object-fit: cover !important;
+  object-position: 50% 31% !important;
+  transform: scale(1.035);
+}
+
+/* Sobre: bloco editorial logo após a abertura, com fotografia do artista. */
+.artist-about--home {
+  overflow: hidden;
+  padding: clamp(5rem, 8vw, 8.5rem) var(--page-padding);
+  border-top: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at 22% 40%, rgba(245, 196, 0, 0.08), transparent 28%),
+    #050505;
+  color: #151515;
+}
+
+.artist-about--home .artist-about__content {
+  grid-template-columns: minmax(260px, 0.72fr) minmax(420px, 1.15fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 8rem);
+  max-width: 1320px;
+}
+
+.artist-about__portrait-card {
+  position: relative;
+  width: min(100%, 420px);
+  margin: 0 auto;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.artist-about__portrait-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -1rem 1rem 1rem -1rem;
+  border: 1px solid rgba(245, 196, 0, 0.45);
+  transform: rotate(-1.2deg);
+}
+
+.artist-about__portrait-card::after {
+  content: "01";
+  position: absolute;
+  top: -1.25rem;
+  right: -0.8rem;
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: var(--yellow);
+  color: #080808;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.artist-about__portrait-image {
+  position: relative;
+  aspect-ratio: 585 / 745;
+  overflow: hidden;
+  background: #171717;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+}
+
+.artist-about__portrait-image img {
+  object-fit: cover;
+  object-position: center 44%;
+}
+
+.artist-about__portrait-card figcaption {
+  margin-top: 0.8rem;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.artist-about__copy--paper {
+  position: relative;
+  max-width: none;
+  padding: clamp(2rem, 4vw, 4.2rem);
+  background: #f3f0e9;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+}
+
+.artist-about__copy--paper::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: clamp(42px, 5vw, 72px);
+  height: 3px;
+  background: var(--yellow);
+  transform: rotate(-2deg);
+}
+
+.artist-about--home .artist-about__copy h2 {
+  font-size: clamp(3rem, 5.4vw, 6.3rem);
+}
+
+.artist-about--home .artist-about__bio {
+  max-width: 660px;
+}
+
+/* Sessão própria para os dois autorretratos. */
+.self-portrait {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(6rem, 9vw, 10rem) var(--page-padding) clamp(5rem, 8vw, 8rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  background:
+    radial-gradient(circle at 79% 22%, rgba(245, 196, 0, 0.08), transparent 24%),
+    radial-gradient(circle at 21% 78%, rgba(21, 83, 132, 0.12), transparent 25%),
+    #050505;
+  color: #fff;
+}
+
+.self-portrait__texture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.11;
+  pointer-events: none;
+  background-image:
+    repeating-radial-gradient(circle at 30% 20%, rgba(255,255,255,.25) 0 0.45px, transparent .7px 6px);
+  background-size: 12px 12px;
+}
+
+.self-portrait__ghost {
+  position: absolute;
+  z-index: -1;
+  top: clamp(1rem, 3vw, 3rem);
+  left: 50%;
+  translate: -50% 0;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.055);
+  font-family: var(--font-display), Arial, sans-serif;
+  font-size: clamp(7rem, 17vw, 18rem);
+  line-height: 0.8;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.self-portrait__layout {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.55fr) minmax(0, 2fr);
+  gap: clamp(2.5rem, 6vw, 7rem);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.self-portrait__intro {
+  align-self: start;
+  position: sticky;
+  top: 6rem;
+  padding-top: clamp(1rem, 4vw, 4rem);
+}
+
+.self-portrait__eyebrow {
+  margin: 0 0 1rem;
+  color: var(--yellow);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.self-portrait__intro h2 {
+  margin: 0;
+  font-family: var(--font-display), Arial, sans-serif;
+  font-size: clamp(3.6rem, 6vw, 7rem);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+.self-portrait__intro > p:not(.self-portrait__eyebrow) {
+  max-width: 285px;
+  margin: 1.6rem 0 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.84rem;
+  line-height: 1.75;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.self-portrait__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--yellow);
+  color: var(--yellow);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: gap 200ms ease;
+}
+
+.self-portrait__link:hover {
+  gap: 1.05rem;
+}
+
+.self-portrait__works {
+  display: grid;
+  grid-template-columns: minmax(0, 1.48fr) minmax(260px, 0.72fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  min-width: 0;
+}
+
+.self-portrait__work {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+}
+
+.self-portrait__work--landscape {
+  align-self: start;
+  margin-top: clamp(4rem, 7vw, 8rem);
+}
+
+.self-portrait__work--portrait {
+  align-self: end;
+}
+
+.self-portrait__number {
+  position: absolute;
+  z-index: 4;
+  top: -0.7rem;
+  left: -0.7rem;
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  background: var(--yellow);
+  color: #070707;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.6);
+}
+
+.self-portrait__frame {
+  position: relative;
+  overflow: hidden;
+  background: #e8e5de;
+  border: clamp(8px, 1vw, 14px) solid #ece9e2;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.self-portrait__work--landscape .self-portrait__frame {
+  aspect-ratio: 4 / 3;
+}
+
+.self-portrait__work--portrait .self-portrait__frame {
+  aspect-ratio: 1535 / 2048;
+}
+
+.self-portrait__frame img {
+  object-fit: contain;
+  background: #ece9e2;
+}
+
+.self-portrait__work--landscape .self-portrait__frame img {
+  object-position: center;
+}
+
+.self-portrait__work--portrait .self-portrait__frame img {
+  object-position: center;
+}
+
+.self-portrait__work figcaption {
+  display: grid;
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+
+.self-portrait__work figcaption strong {
+  font-family: var(--font-hand), cursive;
+  font-size: clamp(1.15rem, 1.7vw, 1.65rem);
+  font-weight: 600;
+}
+
+.self-portrait__work figcaption small {
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.62rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.self-portrait__transition {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 3rem);
+  max-width: 1600px;
+  margin: clamp(5rem, 8vw, 8rem) auto 0;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.self-portrait__transition span:first-child {
+  color: var(--yellow);
+  font-weight: 800;
+}
+
+.self-portrait__transition i {
+  height: 1px;
+  background: linear-gradient(90deg, var(--yellow), rgba(255, 255, 255, 0.1));
+}
+
+@media (max-width: 1000px) {
+  .artist-about--home .artist-about__content {
+    grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+    gap: 2.5rem;
+  }
+
+  .self-portrait__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .self-portrait__intro {
+    position: relative;
+    top: auto;
+    padding-top: 0;
+  }
+
+  .self-portrait__intro > p:not(.self-portrait__eyebrow) {
+    max-width: 560px;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .featured-hero__slide {
-    transition: none;
+@media (max-width: 800px) {
+  .artist-about--home {
+    padding: 4.5rem 1rem 5.5rem;
+  }
+
+  .artist-about--home .artist-about__content {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+
+  .artist-about__portrait-card {
+    width: min(76vw, 390px);
+  }
+
+  .artist-about__copy--paper {
+    width: min(100%, 650px);
+    justify-self: center;
+    padding: 2rem 1.4rem 2.4rem;
+  }
+
+  .self-portrait {
+    padding-inline: 1rem;
+  }
+
+  .self-portrait__ghost {
+    top: 2rem;
+    font-size: 22vw;
+  }
+
+  .self-portrait__works {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 3.5rem;
+  }
+
+  .self-portrait__work--landscape,
+  .self-portrait__work--portrait {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .self-portrait__work--portrait {
+    width: min(76vw, 430px);
+    justify-self: start;
+    margin-left: clamp(1rem, 8vw, 4rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .featured-hero__single-image {
+    object-position: 50% 31% !important;
+  }
+
+  .artist-about__portrait-card {
+    width: min(82vw, 350px);
+  }
+
+  .artist-about__portrait-card::before {
+    inset: -0.65rem 0.65rem 0.65rem -0.65rem;
+  }
+
+  .artist-about--home .artist-about__copy h2 {
+    font-size: clamp(3rem, 16vw, 5rem);
+  }
+
+  .self-portrait__intro h2 {
+    font-size: clamp(3.5rem, 17vw, 5.5rem);
+  }
+
+  .self-portrait__work--portrait {
+    width: min(80vw, 360px);
+    margin-left: 0;
+    justify-self: end;
+  }
+
+  .self-portrait__transition {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .self-portrait__transition i {
+    width: 100%;
   }
 }

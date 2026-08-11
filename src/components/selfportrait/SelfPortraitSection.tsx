@@ -42,8 +42,7 @@ export default function SelfPortraitSection() {
           <p className="self-portrait__eyebrow">Arquivo de autorretratos · 2026</p>
           <h2>Autorretratos</h2>
           <p>
-            Dois estudos de si em enquadramentos distintos. A mesma presença aparece
-            atravessada por cor, gesto e diferentes maneiras de ocupar o papel.
+            A definir
           </p>
 
           <Link href="/galeria#autorretratos" className="self-portrait__link">

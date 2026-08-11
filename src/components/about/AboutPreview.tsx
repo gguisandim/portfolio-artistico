@@ -32,24 +32,7 @@ export default function AboutPreview() {
 
         <div className="artist-about__visuals">
           <motion.figure
-            className="artist-about__photo artist-about__photo--portrait"
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          >
-            <div className="artist-about__image">
-              <Image
-                src="/artist/bruno-castelo.png"
-                alt="Bruno Castelo"
-                fill
-                sizes="(max-width: 700px) 42vw, 230px"
-              />
-            </div>
-          </motion.figure>
-
-          <motion.figure
-            className="artist-about__photo artist-about__photo--artwork"
+            className="artist-about__photo artist-about__photo--artwork artist-about__photo--single"
             initial={{ opacity: 0, y: 34 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
@@ -58,11 +41,12 @@ export default function AboutPreview() {
             <div className="artist-about__image">
               <Image
                 src="/artist/autorretrato-azul.jpeg"
-                alt="Autorretrato de Bruno Castelo"
+                alt="Autorretrato de Bruno Castelo em tons azuis sobre fundo amarelo"
                 fill
-                sizes="(max-width: 700px) 38vw, 210px"
+                sizes="(max-width: 700px) 58vw, 280px"
               />
             </div>
+            <figcaption>Autorretrato II · 2026</figcaption>
           </motion.figure>
         </div>
       </div>

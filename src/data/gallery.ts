@@ -10,6 +10,7 @@ export type GalleryImage = {
 export type GalleryProject = {
   id: string;
   number: string;
+  sectionLabel?: string;
   title: string;
   subtitle: string;
   description: string;
@@ -19,6 +20,33 @@ export type GalleryProject = {
 
 export const galleryProjects: GalleryProject[] = [
   {
+    id: "autorretratos",
+    number: "00",
+    sectionLabel: "Arquivo",
+    title: "Autorretratos",
+    subtitle: "Giz pastel oleoso sobre papel · 2026",
+    description: "Dois autorretratos reunidos fora da série Rostos Familiares.",
+    tone: "color",
+    images: [
+      {
+        id: "autorretrato-amarelo",
+        src: "/artworks/featured/autorretrato.jpg",
+        alt: "Autorretrato de Bruno Castelo em tons amarelos, azuis e verdes",
+        title: "Autorretrato I",
+        detail: "Giz pastel oleoso sobre papel",
+        fit: "contain"
+      },
+      {
+        id: "autorretrato-azul",
+        src: "/artworks/featured/retrato-06.jpg",
+        alt: "Autorretrato de Bruno Castelo em tons azuis sobre fundo amarelo",
+        title: "Autorretrato II",
+        detail: "Giz pastel oleoso sobre papel",
+        fit: "contain"
+      }
+    ]
+  },
+  {
     id: "rostos-familiares",
     number: "01",
     title: "Rostos Familiares",
@@ -26,13 +54,6 @@ export const galleryProjects: GalleryProject[] = [
     description: "Retratos desenvolvidos a partir da observação, da memória e dos vínculos afetivos.",
     tone: "color",
     images: [
-      {
-        id: "autorretrato-bruno-castelo",
-        src: "/artworks/featured/autorretrato.jpg",
-        alt: "Autorretrato de Bruno Castelo",
-        title: "Autorretrato",
-        detail: "Bruno Castelo · 29,7 × 42 cm"
-      },
       {
         id: "leticia",
         src: "/artworks/featured/retrato-01.jpg",
@@ -75,13 +96,13 @@ export const galleryProjects: GalleryProject[] = [
     number: "02",
     title: "Ainda Sou Eu",
     subtitle: "História em quadrinhos · 2026",
-    description: "Detalhes da HQ, capa e traços",
+    description: "Recortes da HQ revisada, reunindo capa, páginas e detalhes da narrativa.",
     tone: "hq",
     images: [
       {
         id: "ainda-sou-eu-capa",
         src: "/artworks/hq/hq-destaque.png",
-        alt: "Capa da HQ Ainda Sou Eu",
+        alt: "Capa revisada da HQ Ainda Sou Eu",
         title: "Capa",
         detail: "Ainda Sou Eu",
         fit: "contain"
@@ -91,8 +112,8 @@ export const galleryProjects: GalleryProject[] = [
         return {
           id: `ainda-sou-eu-${number}`,
           src: `/artworks/hq/hq-${number}.png`,
-          alt: `Página ${number} da HQ Ainda Sou Eu`,
-          title: `Página ${number}`,
+          alt: `Recorte ${number} da HQ Ainda Sou Eu`,
+          title: `Recorte ${number}`,
           detail: "Ainda Sou Eu",
           fit: "contain" as const
         };
@@ -104,7 +125,7 @@ export const galleryProjects: GalleryProject[] = [
     number: "03",
     title: "Arte Digital",
     subtitle: "Ilustrações autorais e fanarts",
-    description: "Personagens, cor e fanarts reunidos nos experimentos digitais do portfólio.",
+    description: "Personagens, cor e fanarts reunidos na produção digital do portfólio.",
     tone: "digital",
     images: [
       {
@@ -112,14 +133,14 @@ export const galleryProjects: GalleryProject[] = [
         src: "/artworks/digital/presenca-em-movimento.jpeg",
         alt: "Personagem azul de cabelos lilás sob uma auréola dourada",
         title: "Deusa da Água",
-        detail: "Experimento 2.5D"
+        detail: "Ilustração"
       },
       {
         id: "rebecca-sugar",
         src: "/artworks/digital/estudo-de-personagem.png",
         alt: "Personagem de cabelos escuros, óculos, blazer e calça azul",
         title: "Rebecca Sugar",
-        detail: "Experimento 2.5D",
+        detail: "Ilustração",
         fit: "contain"
       },
       {
@@ -127,7 +148,7 @@ export const galleryProjects: GalleryProject[] = [
         src: "/artworks/digital/entre-rubi-e-azul.png",
         alt: "Duas personagens sentadas, uma em tons rubi e outra em tons azuis",
         title: "Rubi e Safira",
-        detail: "Experimento 2.5D",
+        detail: "Ilustração",
         fit: "contain"
       }
     ]

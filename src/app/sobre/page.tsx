@@ -16,10 +16,6 @@ export default function SobrePage() {
             <span>Atuação</span>
             <strong>{artist.role}</strong>
           </div>
-          <div>
-            <span>Local</span>
-            <strong>{artist.location}</strong>
-          </div>
         </div>
       </main>
       <Footer />

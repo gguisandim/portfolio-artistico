@@ -53,7 +53,7 @@ export default function FullGallery() {
             className={`gallery-project gallery-project--${project.tone}`}
           >
             <header className="gallery-project__header">
-              <p>{project.number} · Projeto</p>
+              <p>{project.number} · {project.sectionLabel ?? "Projeto"}</p>
               <h2>{project.title}</h2>
               <span>{project.subtitle}</span>
               <p>{project.description}</p>

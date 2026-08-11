@@ -10,18 +10,24 @@ type HQPage = {
   alt: string;
   className: string;
   rotation: number;
+  width: number;
+  height: number;
 };
 
 const hqImages: {
   cover: {
     src: string;
     alt: string;
+    width: number;
+    height: number;
   };
   pages: HQPage[];
 } = {
   cover: {
     src: "/artworks/hq/hq-destaque.png",
-    alt: "Capa da história em quadrinhos Ainda Sou Eu"
+    alt: "Capa revisada da história em quadrinhos Ainda Sou Eu",
+    width: 1100,
+    height: 1555
   },
 
   pages: [
@@ -30,63 +36,81 @@ const hqImages: {
       src: "/artworks/hq/hq-01.png",
       alt: "Página 01 da HQ Ainda Sou Eu",
       className: "hq-paper--page-one",
-      rotation: -3
+      rotation: -3,
+      width: 1100,
+      height: 922
     },
     {
       id: "page-02",
       src: "/artworks/hq/hq-02.png",
       alt: "Página 02 da HQ Ainda Sou Eu",
       className: "hq-paper--page-two",
-      rotation: 2
+      rotation: 2,
+      width: 1100,
+      height: 992
     },
     {
       id: "page-03",
       src: "/artworks/hq/hq-03.png",
       alt: "Página 03 da HQ Ainda Sou Eu",
       className: "hq-paper--page-three",
-      rotation: -1
+      rotation: -1,
+      width: 1100,
+      height: 1555
     },
     {
       id: "page-04",
       src: "/artworks/hq/hq-04.png",
       alt: "Página 04 da HQ Ainda Sou Eu",
       className: "hq-paper--page-four",
-      rotation: 1.5
+      rotation: 1.5,
+      width: 1100,
+      height: 492
     },
     {
       id: "page-05",
       src: "/artworks/hq/hq-05.png",
       alt: "Página 05 da HQ Ainda Sou Eu",
       className: "hq-paper--page-five",
-      rotation: -2
+      rotation: -2,
+      width: 890,
+      height: 991
     },
     {
       id: "page-06",
       src: "/artworks/hq/hq-06.png",
       alt: "Página 06 da HQ Ainda Sou Eu",
       className: "hq-paper--page-six",
-      rotation: 2.5
+      rotation: 2.5,
+      width: 1100,
+      height: 521
     },
     {
       id: "page-07",
       src: "/artworks/hq/hq-07.png",
       alt: "Página 07 da HQ Ainda Sou Eu",
       className: "hq-paper--page-seven",
-      rotation: -1.5
+      rotation: -1.5,
+      width: 1100,
+      height: 1024
     },
     {
       id: "page-08",
       src: "/artworks/hq/hq-08.png",
       alt: "Página 08 da HQ Ainda Sou Eu",
       className: "hq-paper--page-eight",
-      rotation: 1
+      rotation: 1,
+      width: 1100,
+      height: 706
     },
     {
       id: "page-09",
       src: "/artworks/hq/hq-09.png",
       alt: "Página 09 da HQ Ainda Sou Eu",
       className: "hq-paper--page-nine",
-      rotation: -2.5
+      rotation: -2.5,
+      width: 1100,
+      height: 673
     }
   ]
 };
@@ -232,7 +256,10 @@ Perpassando por temas como infância, melancolia e sexualidade, a HQ ‘Ainda So
             aria-hidden="true"
           />
 
-          <div className="hq-paper__image hq-paper__image--cover">
+          <div
+            className="hq-paper__image hq-paper__image--cover"
+            style={{ aspectRatio: `${hqImages.cover.width} / ${hqImages.cover.height}` }}
+          >
             <Image
               src={hqImages.cover.src}
               alt={hqImages.cover.alt}
@@ -329,7 +356,10 @@ Perpassando por temas como infância, melancolia e sexualidade, a HQ ‘Ainda So
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <div className="hq-paper__image">
+                <div
+                  className="hq-paper__image"
+                  style={{ aspectRatio: `${page.width} / ${page.height}` }}
+                >
                   <Image
                     src={page.src}
                     alt={page.alt}

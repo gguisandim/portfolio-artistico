@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import FullGallery from "@/components/gallery/FullGallery";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
+import { galleryProjects } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Galeria — Bruno Castelo",
@@ -9,6 +10,8 @@ export const metadata: Metadata = {
 };
 
 export default function GaleriaPage() {
+  const totalImages = galleryProjects.reduce((total, project) => total + project.images.length, 0);
+
   return (
     <>
       <Header />
@@ -16,9 +19,9 @@ export default function GaleriaPage() {
         <header className="gallery-hero">
           <p>Arquivo visual</p>
           <h1>Galeria</h1>
-          <span>19 imagens · 3 projetos</span>
+          <span>{totalImages} imagens · {galleryProjects.length} núcleos</span>
           <p>
-            Uma visão completa das pinturas, páginas de HQ e ilustrações digitais presentes no portfólio.
+            Autorretratos, pinturas, recortes de HQ e ilustrações digitais reunidos em um único arquivo visual.
           </p>
         </header>
         <FullGallery />

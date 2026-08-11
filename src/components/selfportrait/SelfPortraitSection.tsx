@@ -41,9 +41,6 @@ export default function SelfPortraitSection() {
         >
           <p className="self-portrait__eyebrow">Arquivo de autorretratos · 2026</p>
           <h2>Autorretratos</h2>
-          <p>
-            A definir
-          </p>
 
           <Link href="/galeria#autorretratos" className="self-portrait__link">
             Ver na galeria <span aria-hidden="true">↗</span>
